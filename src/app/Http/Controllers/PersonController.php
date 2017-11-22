@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\App;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Person;
+use App\Models\Person;
 use Amranidev\Ajaxis\Ajaxis;
 use URL;
 use Woodw\Utils\Helpers\UtilsHelper;

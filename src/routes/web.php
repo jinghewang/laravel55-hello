@@ -34,5 +34,5 @@ Route::get('/person/create', 'PersonController@create');
 Route::any('/person/store', 'PersonController@store');
 Route::get('/person/{id}', 'PersonController@show');
 Route::get('/person/{id}/edit', 'PersonController@edit');
-Route::any('/person/update', 'PersonController@update');
+Route::any('/person/{id}/update', 'PersonController@update');
 Route::any('/person/{id}/deleteMsg', 'PersonController@deleteMsg');
