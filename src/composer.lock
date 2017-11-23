@@ -4438,12 +4438,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jinghewang/php-utils.git",
-                "reference": "d513fc17030de2fa129e7d96be0075aded5aed24"
+                "reference": "06eb89d80cf5240c9fb117acdaa0113db19dac84"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jinghewang/php-utils/zipball/d513fc17030de2fa129e7d96be0075aded5aed24",
-                "reference": "d513fc17030de2fa129e7d96be0075aded5aed24",
+                "url": "https://api.github.com/repos/jinghewang/php-utils/zipball/06eb89d80cf5240c9fb117acdaa0113db19dac84",
+                "reference": "06eb89d80cf5240c9fb117acdaa0113db19dac84",
                 "shasum": ""
             },
             "require": {
@@ -4476,7 +4476,7 @@
                 "php",
                 "utils"
             ],
-            "time": "2017-11-16 03:34:42"
+            "time": "2017-11-23 01:33:01"
         }
     ],
     "packages-dev": [
