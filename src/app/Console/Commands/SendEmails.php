@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App;
 use Illuminate\Console\Command;
 use Woodw\Utils\Helpers\UtilsHelper;
 
@@ -41,6 +42,9 @@ class SendEmails extends Command
     public function handle()
     {
         //$arg = $this->argument('user');
+
+        $environment = App::environment();
+        $this->info($environment);
 
         //name
         $name = $this->ask('What is your name?');
