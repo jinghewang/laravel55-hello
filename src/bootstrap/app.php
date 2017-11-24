@@ -41,6 +41,11 @@ $app->singleton(
     App\Exceptions\Handler::class
 );
 
+
+$app->configureMonologUsing(function (Monolog\Logger $monolog){
+    $monolog->pushHandler(new \Monolog\Handler\StreamHandler("php://stderr"));
+});
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application
