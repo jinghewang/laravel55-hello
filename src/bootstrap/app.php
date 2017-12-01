@@ -41,10 +41,17 @@ $app->singleton(
     App\Exceptions\Handler::class
 );
 
-
+//添加日志输出 wjh 2017-11-28
 $app->configureMonologUsing(function (Monolog\Logger $monolog){
     $monolog->pushHandler(new \Monolog\Handler\StreamHandler("php://stderr"));
 });
+
+
+$app->singleton(app\Contracts\HelloContract::class, function ($app) {
+    return new \app\Contracts\Http\Hello();
+});
+
+
 
 /*
 |--------------------------------------------------------------------------

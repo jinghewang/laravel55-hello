@@ -35,6 +35,11 @@ require __DIR__.'/../vendor/autoload.php';
 |
 */
 
+/**
+ * @var Illuminate\Foundation\Application $app
+ * @var Illuminate\Contracts\Http\Kernel $kernel
+ */
+
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
 /*

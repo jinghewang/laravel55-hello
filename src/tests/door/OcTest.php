@@ -3,10 +3,12 @@
 namespace Tests\Door;
 
 use App;
+use app\Contracts\HelloContract;
+use app\Contracts\Http\Hello;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class EnvTest extends TestCase
+class OcTest extends TestCase
 {
 
 
