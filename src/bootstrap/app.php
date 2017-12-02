@@ -47,9 +47,7 @@ $app->configureMonologUsing(function (Monolog\Logger $monolog){
 });
 
 
-$app->singleton(app\Contracts\HelloContract::class, function ($app) {
-    return new \app\Contracts\Http\Hello();
-});
+$app->bind(app\Contracts\HelloContract::class, \app\Contracts\Http\Hello::class);
 
 
 

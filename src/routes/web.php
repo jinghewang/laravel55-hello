@@ -29,6 +29,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //person
 Route::get('/person', 'PersonController@index');
+Route::get('/person/zr', 'PersonController@zr');
 Route::get('/person/index', 'PersonController@index');
 Route::get('/person/create', 'PersonController@create');
 Route::any('/person/store', 'PersonController@store');

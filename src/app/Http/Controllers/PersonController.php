@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\PersonRepository;
 use Illuminate\Support\Facades\App;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -18,6 +19,27 @@ use Woodw\Utils\Helpers\UtilsHelper;
  */
 class PersonController extends Controller
 {
+
+    /**
+     * @var PersonRepository
+     */
+    private $persons ;
+
+    /**
+     * PersonController constructor.
+     * @param PersonRepository $persons
+     */
+    public function __construct(PersonRepository $persons) {
+        $this->persons = $persons;
+    }
+
+    public function zr(){
+        $data = $this->persons->all('*')->toArray();
+        UtilsHelper::print_r($data);
+        die;
+    }
+
+
     /**
      * Display a listing of the resource.
      *

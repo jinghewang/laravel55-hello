@@ -63,7 +63,6 @@ class DbTest extends TestCase {
         print_r($deleted);
         self::assertTrue($deleted == 1);
 
-        die;
         //$result = DB::statement('drop table users');
     }
 
@@ -74,7 +73,7 @@ class DbTest extends TestCase {
         DB::transaction(function () {
             DB::table('users')->update(['votes' => 1]);
 
-            DB::table('posts')->delete();
+            //DB::table('posts')->delete();
         });
     }
 
