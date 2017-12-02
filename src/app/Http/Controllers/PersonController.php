@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Contracts\HelloContract;
 use App\Repositories\PersonRepository;
 use Illuminate\Support\Facades\App;
 use Illuminate\Http\Request;
@@ -21,20 +22,20 @@ class PersonController extends Controller
 {
 
     /**
-     * @var PersonRepository
+     * @var HelloContract
      */
     private $persons ;
 
     /**
      * PersonController constructor.
-     * @param PersonRepository $persons
+     * @param HelloContract $persons
      */
-    public function __construct(PersonRepository $persons) {
+    public function __construct(HelloContract $persons) {
         $this->persons = $persons;
     }
 
     public function zr(){
-        $data = $this->persons->all('*')->toArray();
+        $data = $this->persons->hello('123');
         UtilsHelper::print_r($data);
         die;
     }

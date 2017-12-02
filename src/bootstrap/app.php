@@ -47,7 +47,7 @@ $app->configureMonologUsing(function (Monolog\Logger $monolog){
 });
 
 
-$app->bind(app\Contracts\HelloContract::class, \app\Contracts\Http\Hello::class);
+$app->bind(App\Contracts\HelloContract::class, \App\Contracts\Http\Hello::class);
 
 
 
