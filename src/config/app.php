@@ -190,6 +190,12 @@ return [
          */
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
 
+        /**
+         * provider for wjh 2017-12-03
+         */
+        App\Providers\RiakServiceProvider::class,
+
+
     ],
 
     /*

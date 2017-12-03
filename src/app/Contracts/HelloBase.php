@@ -9,16 +9,31 @@
 namespace App\Contracts;
 
 
+use Illuminate\Support\Facades\Log;
+
 class HelloBase implements HelloContract {
 
 
+    /**
+     * @var string
+     */
     public $scope;
 
+
+    /**
+     * HelloBase constructor.
+     * @param $scope
+     */
+    public function __construct($scope='local') {
+        $this->scope = $scope;
+    }
+
     public function test() {
-        echo  "{$this->scope}";
+        Log::info("{$this->scope}");
     }
 
     public function hello($message) {
-        echo  "hello:{$this->scope}";
+        $msg = "[{$this->scope}] hello:{$message}";
+        Log::info($msg);
     }
 }

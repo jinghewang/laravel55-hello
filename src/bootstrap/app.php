@@ -11,6 +11,9 @@
 |
 */
 
+use Illuminate\Support\Facades\Log;
+
+
 $app = new Illuminate\Foundation\Application(
     realpath(__DIR__.'/../')
 );
@@ -47,8 +50,12 @@ $app->configureMonologUsing(function (Monolog\Logger $monolog){
 });
 
 
+//绑定接口实现
 $app->bind(App\Contracts\HelloContract::class, \App\Contracts\Http\Hello::class);
 
+//绑定实例
+//$api = new \App\Contracts\Http\Hello();
+//$app->instance('HelpSpot\Hello', $api);
 
 
 /*
