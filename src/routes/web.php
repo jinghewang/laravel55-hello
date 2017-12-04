@@ -37,3 +37,20 @@ Route::get('/person/{id}', 'PersonController@show');
 Route::get('/person/{id}/edit', 'PersonController@edit');
 Route::any('/person/{id}/update', 'PersonController@update');
 Route::any('/person/{id}/deleteMsg', 'PersonController@deleteMsg');
+
+//视图路由
+Route::view('/person/view/{id}', 'person.view',['person'=>\App\Models\Person::all()->first()]);
+
+//路由参数
+Route::get('/person/name/{name}/id/{id}', function ($name, $id) {
+    var_dump($name,$id);
+})->where('id','[0-9]+');
+
+
+Route::get('/service/person/index', 'Service\PersonController@index');
+Route::get('/service/person/check', 'Service\PersonController@check')->middleware('check.age');
+
+//中间件参数
+Route::get('/service/person/check2', 'Service\PersonController@check2')->middleware('check.ageWithName:wjh');
+
+Route::get('/service/person/phpinfo', 'Service\PersonController@phpinfo');
