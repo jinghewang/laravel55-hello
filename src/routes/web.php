@@ -11,7 +11,6 @@
 |
 */
 
-
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -22,34 +21,22 @@ Route::get('foo', function () {
     return 'Hello World';
 });
 
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::view('/greeting', 'greeting',['name' => 'James']);
+
+Route::get('/greeting2',function(\Illuminate\Http\Request $request){
+    if (View::exists('greeting')){
+        return view('greeting')->with('name','wjh 2017-12-05 ');
+    }else{
+        return response('greeting', 200)->header('Content-Type', 'text/plain');;
+    }
+});
+
 Route::get('/api', function(){
     return \App\Models\Person::all()->first()->toArray();
-});
-
-Route::get('/jsonp', function(\Illuminate\Http\Request $request){
-    return response()
-        ->json(['name' => 'Abigail', 'state' => 'CA'])
-        ->withCallback($request->input('callback'));
-});
-
-
-Route::get('/welcome', function(){
-    return response('Hello World', 200)->header('Content-Type', 'text/plain');
-});
-
-
-Route::get('/welcome2', function(){
-    $response = response([123, 456], 200)
-        ->withHeaders([
-            'Content-Type' => 'text/json',
-        ])
-        ->cookie('name', 'value');
-    return $response;
 });
 
 
