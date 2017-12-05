@@ -20,9 +20,9 @@ class AppServiceProvider extends ServiceProvider
 
         //查询事件的监听
         DB::listen(function ($query) {
-            Log::warning( $query->sql);
-            Log::warning($query->bindings);
-            Log::warning($query->time);
+            //Log::warning( $query->sql);
+            //Log::warning($query->bindings);
+            //Log::warning($query->time);
         });
     }
 

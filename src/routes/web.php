@@ -27,6 +27,32 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/api', function(){
+    return \App\Models\Person::all()->first()->toArray();
+});
+
+Route::get('/jsonp', function(\Illuminate\Http\Request $request){
+    return response()
+        ->json(['name' => 'Abigail', 'state' => 'CA'])
+        ->withCallback($request->input('callback'));
+});
+
+
+Route::get('/welcome', function(){
+    return response('Hello World', 200)->header('Content-Type', 'text/plain');
+});
+
+
+Route::get('/welcome2', function(){
+    $response = response([123, 456], 200)
+        ->withHeaders([
+            'Content-Type' => 'text/json',
+        ])
+        ->cookie('name', 'value');
+    return $response;
+});
+
+
 //person
 Route::get('/person', 'PersonController@index');
 Route::get('/person/zr', 'PersonController@zr');
@@ -54,3 +80,8 @@ Route::get('/service/person/check', 'Service\PersonController@check')->middlewar
 Route::get('/service/person/check2', 'Service\PersonController@check2')->middleware('check.ageWithName:wjh');
 
 Route::get('/service/person/phpinfo', 'Service\PersonController@phpinfo');
+
+
+Route::any('/photos/xx', 'PhotoController@xx');
+
+Route::resource('photos', 'PhotoController');

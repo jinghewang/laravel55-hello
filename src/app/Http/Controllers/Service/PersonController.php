@@ -8,7 +8,23 @@ use Illuminate\Support\Facades\Response;
 
 class PersonController extends Controller
 {
-    //
+
+    /**
+     * PersonController constructor.
+     */
+    public function __construct() {
+        //$this->middleware('check.age');
+        //$this->middleware('log')->only('index');
+        //$this->middleware('subscribed')->except('store');
+
+        $this->middleware(function ($request, $next) {
+            // ...
+
+            return $next($request);
+        });
+    }
+
+
     public function index() {
         return [
             'id'   => 1,
