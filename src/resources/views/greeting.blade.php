@@ -67,7 +67,11 @@
 <body>
 <div class="flex-center position-ref full-height">
 
-{{ $name }}
+    {{ $name }}
+    <br>
+    {{ $xo }}
+    <br>
+    {{ $count }}
 
 </div>
 </body>

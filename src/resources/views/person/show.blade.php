@@ -4,7 +4,7 @@
 
 <section class="content">
     <h1>
-        Show person
+        Show person     {{ $count }}
     </h1>
     <br>
     <a href='{!!url("person")!!}' class = 'btn btn-primary'><i class="fa fa-home"></i>Person Index</a>
