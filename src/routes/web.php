@@ -39,6 +39,13 @@ Route::get('/api', function(){
     return \App\Models\Person::all()->first()->toArray();
 });
 
+Route::get('welcome/{locale}', function ($locale) {
+    //App::setLocale($locale);
+    var_dump(App::getLocale());
+    echo __('passwords.password');
+    die;
+});
+
 
 //person
 Route::get('/person', 'PersonController@index');

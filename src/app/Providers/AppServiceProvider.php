@@ -21,6 +21,7 @@ class AppServiceProvider extends ServiceProvider
 
         View::share('xo','wjh');
 
+        //视图合成器
         View::composer(
             'greeting', 'App\Composers\ProfileComposer'
         );
