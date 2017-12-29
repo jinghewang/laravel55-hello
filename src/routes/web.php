@@ -79,3 +79,31 @@ Route::get('/service/person/phpinfo', 'Service\PersonController@phpinfo');
 Route::any('/photos/xx', 'PhotoController@xx');
 
 Route::resource('photos', 'PhotoController');
+
+
+
+//person
+Route::get('/wx', 'WeixinController@index');//pageAccessToken
+Route::get('/wx/xx', 'WeixinController@xx');
+Route::get('/wx/pageAccessToken', 'WeixinController@pageAccessToken');
+
+Route::group(['middleware'=> 'web'],function(){
+});
+
+Route::group(['middleware'=> 'web'],function(){
+});
+//shop Routes
+Route::group(['middleware'=> 'web'],function(){
+  Route::resource('shop','\App\Http\Controllers\ShopController');
+  Route::post('shop/{id}/update','\App\Http\Controllers\ShopController@update');
+  Route::get('shop/{id}/delete','\App\Http\Controllers\ShopController@destroy');
+  Route::get('shop/{id}/deleteMsg','\App\Http\Controllers\ShopController@DeleteMsg');
+});
+
+//invoice Routes
+Route::group(['middleware'=> 'web'],function(){
+  Route::resource('invoice','\App\Http\Controllers\InvoiceController');
+  Route::post('invoice/{id}/update','\App\Http\Controllers\InvoiceController@update');
+  Route::get('invoice/{id}/delete','\App\Http\Controllers\InvoiceController@destroy');
+  Route::get('invoice/{id}/deleteMsg','\App\Http\Controllers\InvoiceController@DeleteMsg');
+});
